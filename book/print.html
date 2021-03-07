@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="db-intro.html"><strong aria-hidden="true">1.</strong> 🔐 Introdução ao Banco de Dados</a></li><li class="chapter-item expanded "><a href="banco-de-dados/index.html"><strong aria-hidden="true">2.</strong> 📙 Banco de Dados</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="banco-de-dados/gestao-db.html"><strong aria-hidden="true">2.1.</strong> 👮 A Gestão de um Banco de Dados</a></li><li class="chapter-item expanded "><a href="banco-de-dados/modelagem-dados.html"><strong aria-hidden="true">2.2.</strong> 👥 Modelagem de Dados</a></li></ol></li><li class="chapter-item expanded "><a href="entidades/index.html"><strong aria-hidden="true">3.</strong> 🧍 Entidades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="entidades/mer-model.html"><strong aria-hidden="true">3.1.</strong> 🏗️ Modelo Entidade-Relacionamento(MER)</a></li><li class="chapter-item expanded "><a href="entidades/entities-attributes.html"><strong aria-hidden="true">3.2.</strong> 👻 Atributos das Entidades</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="-introdução-ao-banco-de-dados"><a class="header" href="#-introdução-ao-banco-de-dados">🔐 Introdução ao Banco de Dados</a></h1>
+<hr />
+<p>No mundo digital as informações que usamos a todo momento estão armazenadas em um banco de dados. Seu objetivo é armazenar dados e, por meio de uma consulta, gerar informações úteis em certo contexto, além de reter dados de forma a serem utilizados em outros momentos.</p>
+<h2 id="a-cronologia-do-uso-do-banco-de-dados"><a class="header" href="#a-cronologia-do-uso-do-banco-de-dados">A Cronologia do Uso do Banco de Dados</a></h2>
+<p>Nos anos 50 os dados eram guardados em pastas e armazenados em papéis que ficavam em arquivos. Já no campo da tecnologia da informação os papéis poderiam ser considerados registros, o conjunto de todas as pastas é chamado de tabela e o amontoado de papéis, na área de TI, é chamado de arquivo. Ainda na década de 50 os computadores começaram a serem usados por meio dos arquivos sequenciais, fitas magnéticas ou cartões perfurados. Apenas com o uso de índices foi possível o acesso direto(pular arquivos na consulta) sem o uso do acesso sequencial.</p>
+<p>Com o uso de arquivos digitais eram usados softwares muito simples que permitiam cadastro, busca, exclusão, melhorando a consulta às informações(criando uma versão melhorada dos arquivos físicos). Porém ainda eram dados isolados, fazendo com que cadastros de produtos não consigam saber o seu pertencimento aos seus fornecedores, isto é, o banco de dados dos fornecedores não possibilitava saber quais produtos eram oferecidos pois eles estavam isolados em bancos diferentes. </p>
+<blockquote>
+<p>Na década de 60 ocorre o CODASIL, um evento onde surgiu o COBOL, a primeira linguagem preocupada com a estrutura de dados e o primeiro banco de dados parecido com o que é usado hoje(diferente de arquivos isolados).</p>
+</blockquote>
+<p>Na década de 70 surgiu o modelo de banco de dados correlacionado, o SQL, uma linguagem de exploração usada para manter banco de dados.</p>
+<h1 id="-banco-de-dados"><a class="header" href="#-banco-de-dados">📙 Banco de Dados</a></h1>
+<hr />
+<h2 id="o-que-afinal-é-o-banco-de-dados-"><a class="header" href="#o-que-afinal-é-o-banco-de-dados-">O que afinal é o banco de dados ?</a></h2>
+<p>Um banco de dados, em sua definição, é uma entidade na qual é possível armazenar dados de maneira estruturada e com menor redundância possível. Estes dados podem ser usados por programas ou usuários.</p>
+<h2 id="utilidade-do-banco-de-dados"><a class="header" href="#utilidade-do-banco-de-dados">Utilidade do Banco de Dados</a></h2>
+<p>Um banco de dados pode não só armazenar dados como também limitar a consulta a certa classe de usuários de acordo com seus direitos, por exemplo quando são usadas lojas virtuais, em que o usuário pode apenas visualizar os dados enquanto o administrador pode também escrever no banco de dados. A vantagem essencial de um banco de dados é a consulta simultânea por diversos usuários.</p>
+<h1 id="-a-gestão-de-um-banco-de-dados"><a class="header" href="#-a-gestão-de-um-banco-de-dados">👮 A Gestão de um Banco de Dados</a></h1>
+<hr />
+<p>A fim de controlar os dados é necessário um sistema de gestão dos mesmos.</p>
+<h2 id="sistema-de-gestão-de-banco-de-dadossgbd"><a class="header" href="#sistema-de-gestão-de-banco-de-dadossgbd">Sistema de Gestão de Banco de Dados(SGBD)</a></h2>
+<p>A gestão do Banco de Dados é feita por meio de um Sistema de Gestão de Banco de Dados que é um software, ou conjunto de aplicações capaz de autorizar o acesso a informação por múltiplos usuários, manipular usuários, permitir acesso à informação de forma simples...</p>
+<h2 id="objetivos-de-um-sgbd-eficiente"><a class="header" href="#objetivos-de-um-sgbd-eficiente">Objetivos de um SGBD Eficiente</a></h2>
+<p>É preciso que o SGBD provenha:</p>
+<ul>
+<li>Informações precisas;</li>
+<li>Oportunas;</li>
+<li>Exatas;</li>
+<li>Relevantes;</li>
+<li>Facilitar acesso das informações aos usuários:
+<ul>
+<li>A facilitação só é possível quando as informações estão: 
+<ul>
+<li>Bem organizadas;</li>
+<li>Bem administradas;</li>
+<li>Bem mantidas.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="-modelagem-de-dados"><a class="header" href="#-modelagem-de-dados">👥 Modelagem de Dados</a></h1>
+<hr />
+<p>Existem diversos modelos de dados como: hierárquico, rede, relacional, orientado a objeto e não relacional, porém o que será abordado durante o curso é o relacional.</p>
+<h2 id="modelagem-de-dados"><a class="header" href="#modelagem-de-dados">Modelagem de Dados</a></h2>
+<p>Um modelo de dados é importante pra a criação de um sistema de informação com a aplicação de técnicas específicas de modelagem(nem sempre o projetista do banco de dados é o programador). O modelo de dados segue regras de negócio a fim de fornecer uma estrutura para os dados serem usados em um sistema de informação, aplicando definições e formatos específicos.</p>
+<h2 id="níveis-de-modelagem-de-dados"><a class="header" href="#níveis-de-modelagem-de-dados">Níveis de Modelagem de Dados</a></h2>
+<ul>
+<li>Modelo conceitual: ideia abstrata, geral...
+<ul>
+<li>Primeira fase de modelagem, sem pensar em SGBD, linguagem...</li>
+<li>Visão simplificada dos dados e relacionamentos</li>
+</ul>
+</li>
+<li>Modelo lógico: detalhamento intermediário
+<ul>
+<li>Contém especificação detalhada</li>
+<li>Tipos de dados definidos</li>
+</ul>
+</li>
+<li>Modelo físico: alto nível de detalhamento final, amplo...
+<ul>
+<li>Contém até mesmo restrições na tabela, nos seus campos, valores...</li>
+<li>Após a criação deste modelo é implementado o SGBD mais adequado</li>
+</ul>
+</li>
+</ul>
+<h2 id="modelo-relacional"><a class="header" href="#modelo-relacional">Modelo Relacional</a></h2>
+<p>Neste modelo os dados são organizados em tabela(relações) bidimensionais, linhas e colunas. O modelo relacional é baseado em lógica e teoria dos conjuntos. Neste modelo um banco de dados é uma coleção de relações(tabelas bidimensionais) onde os dados são armazenados, por exemplo em um sistema acadêmico, para armazenar dados sobre os alunos são criadas tabelas para conter os dados dos alunos como: dados pessoais, disciplinas cursadas, notas...</p>
+<h2 id="componentes-do-modelo-relacional"><a class="header" href="#componentes-do-modelo-relacional">Componentes do Modelo Relacional</a></h2>
+<p>Dentre os componentes do modelo relacional serão abordados:</p>
+<ul>
+<li>Coleções de objetos que armazenam dados(relações - tabelas);</li>
+<li>Conjuntos de operadores que agem nas relações, produzindo outras relações;</li>
+<li>Conjuntos de regras que garantem a integridade de dados, precisão e consistência.</li>
+</ul>
+<p>No modelo relacional existem <strong>Tabelas</strong>, que são a estrutura básica de armazenamento no SGBDR, armazenando dados necessários sobre o mundo real.</p>
+<p>Também existem as <strong>Tuplas</strong>, que são linhas(registros), representando os dados de uma determinada ocorrência em particular, por exemplo, em uma tupla do banco de dados de uma escola existe os dados de um aluno. Cada linha deve conter uma informação única de modo que não seja duplicada.</p>
+<p>Existem também <strong>Colunas</strong> que armazenam um tipo específico de dado(valor), por exemplo, a coluna que armazena nome do usuário em um banco de dados.</p>
+<p>O <strong>Relacionamento</strong> é uma conexão existente entre tabelas conectadas por atributos(chave primária e estrangeira). Por exemplo: numa universidade existem banco de dados para alunos e para os dados de um curso, é possível relacionar o banco de dados dos alunos selecionando os que fazem certo curso com o banco de dados que contém os cursos.</p>
+<h2 id="etapas-de-desenvolvimento-do-banco-de-dados"><a class="header" href="#etapas-de-desenvolvimento-do-banco-de-dados">Etapas de Desenvolvimento do Banco de Dados</a></h2>
+<ul>
+<li>Especificação e análise de requisitos
+<ul>
+<li>Documentação de requisitos</li>
+</ul>
+</li>
+<li>Projeto conceitual(processo inicial)</li>
+<li>Projeto Lógico: expresso num modelo relacional</li>
+<li>Projeto Físico: 
+<ul>
+<li>Contém especificações para armazenar e acessar o banco de dados</li>
+<li>Implementação, inserção e manutenção dos dados.</li>
+</ul>
+</li>
+</ul>
+<h1 id="-entidades"><a class="header" href="#-entidades">🧍 Entidades</a></h1>
+<hr />
+<p>É um modelo de dados conceitual de alto nível, ou seja, seus conceitos foram projetados para serem compreensíveis aos usuários descartando métodos de armazenamento de dados, etc.</p>
+<p>Pode ser expresso graficamente por meio do Diagrama Entidade Relacionamento(DER). Cada elemento do MER pode ser representado usando o DER.</p>
+<h1 id="-modelo-entidade-relacionamentomer"><a class="header" href="#-modelo-entidade-relacionamentomer">🏗️ Modelo Entidade-Relacionamento(MER)</a></h1>
+<hr />
+<p>É um modelo de dados conceitual de alto nível, ou seja, seus conceitos foram projetados para serem compreensíveis aos usuários descartando métodos de armazenamento de dados, etc.</p>
+<p>Pode ser expresso graficamente por meio do Diagrama Entidade Relacionamento(DER). Cada elemento do MER pode ser representado usando o DER.</p>
+<div style="text-align:center">
+<img src="entidades/../images/der-image.png" alt="der-image">
+</div>
+<p>A partir do MER podemos criar um DER de acordo com as especificações definidas nas análises de requisitos, permitindo ilustrar as entidades e relacionamentos entre elas. O MER ajuda a separar as informações do negócio das atividades realizadas no mesmo.</p>
+<h2 id="componentes-do-mer"><a class="header" href="#componentes-do-mer">Componentes do MER</a></h2>
+<p>A <strong>Entidade</strong> (tabela, registros,...) é algo significativo sobre o qual devemos possuir informações como por exemplo a tabela de clientes, já o <strong>Atributo</strong> descreve uma entidade e o <strong>Relacionamento</strong> é uma associação entre as Entidades.</p>
+<h2 id="a-entidade"><a class="header" href="#a-entidade">A Entidade</a></h2>
+<ul>
+<li>Uma entidade é algo com importância para um usuário ou organização que precisa ser representado no banco de dados. </li>
+<li>Uma entidade pode ter existência física ou abstrata. </li>
+<li>As entidades modeladas no MER serão tabelas dos bancos de dados. </li>
+<li>Cada objeto de uma entidade é chamado de instância de entidade. </li>
+<li>Cada instância/ocorrência de entidade será uma linha da tabela ou registro ou ainda tupla.</li>
+</ul>
+<p>A representação da entidade no diagrama deve ser representada por um RETÂNGULO. Para identificar uma identidade fazemos a pergunta: &quot;a respeito de quem eu quero guardar informações ?&quot;</p>
+<h2 id="regras-para-nomeação-de-entidades"><a class="header" href="#regras-para-nomeação-de-entidades">Regras para Nomeação de Entidades</a></h2>
+<p>Existem regras para a nomeação de entidades como:</p>
+<ul>
+<li>Começam com letra;</li>
+<li>Usam palavras no singular;</li>
+<li>Não têm espaço;</li>
+<li>Evitam caracteres especiais;</li>
+<li>Devem ser únicos no banco de dados. </li>
+</ul>
+<h1 id="-atributos-das-entidades"><a class="header" href="#-atributos-das-entidades">👻 Atributos das Entidades</a></h1>
+<hr />
+<p>Para identificar entidades precisamos de atributos, que dentro do banco de dados serão computados como colunas, por exemplo: ra, nome, data de nascimento... Para identificar que quais são os atributos devemos nos perguntar: &quot;o que quero guardar a respeito dessa entidade ?&quot;. Os atributos devem possuir:</p>
+<ul>
+<li>Tipos de dados(domínio);</li>
+<li>Nome;</li>
+<li>Valor específico.</li>
+</ul>
+<p>Dentre os tipos de atributos podemos ter: <strong>atributos simples/atômico</strong> (não podem ser divididos), ou <strong>atributos compostos</strong> (que podem sim ser divididos) como por exemplo: endereço que pode ser dividido em rua, número, bairro, CEP...</p>
+<p>Podem ser caracterizados como: <strong>monovalorados</strong>, que definem um único valor(data de nascimento por exemplo) ou <strong>multivalorados</strong>,  que definem um conjunto de valores(telefones).</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
