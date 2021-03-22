@@ -1,5 +1,6 @@
 # Summary
 
+- [△ DeltaOrganization](delta-org.md)
 - [🔐 Introdução ao Banco de Dados](./db-intro.md)
 - [📙 Banco de Dados](./banco-de-dados/README.md)
     - [👮 A Gestão de um Banco de Dados](./banco-de-dados/gestao-db.md)
